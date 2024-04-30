@@ -27,10 +27,80 @@
           }
         }
       }
+    },
+    "/testParams": {
+      "get": {
+        "tags": [
+          "WebApi"
+        ],
+        "operationId": "GetTestParams",
+        "parameters": [
+          {
+            "name": "dateTimeOffset",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dateTime",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "dateOnly",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DateTests"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "DateTests": {
+        "type": "object",
+        "properties": {
+          "dateTimeOffset": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dateTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dateOnly": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "WeatherForecast": {
         "type": "object",
         "properties": {

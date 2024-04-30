@@ -36,9 +36,18 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
+app.MapGet("/testParams", (DateTimeOffset? dateTimeOffset, DateTime? dateTime, DateOnly? dateOnly) =>
+{
+    return new DateTests(dateTimeOffset, dateTime, dateOnly);
+})
+.WithName("GetTestParams")
+.WithOpenApi();
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+record DateTests(DateTimeOffset? dateTimeOffset, DateTime? dateTime, DateOnly? dateOnly);

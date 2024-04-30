@@ -35,4 +35,22 @@ public class UnitTestDateOnly
             Assert.Fail(e.Message);
         }
     }
+
+    /// <summary>
+    /// GetTestParams fails with
+    /// 'Cannot convert null value to System.DateOnly.'
+    /// because ApiClientGenerator does not make swagger nullable Date to C# Nullable DateOnly
+    /// </summary>
+    [Fact]
+    public void DateOnlyNotNullable()
+    {
+        try
+        {
+            webApi.GetTestParams();
+        }
+        catch (Exception e)
+        {
+            Assert.Fail(e.Message);
+        }
+    }
 }

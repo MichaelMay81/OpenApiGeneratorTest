@@ -30,6 +30,30 @@ namespace OpenApiGeneratorTest.WebApi.Client.Api
         /// 
         /// </summary>
         /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DateTests</returns>
+        DateTests GetTestParams(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DateTests</returns>
+        ApiResponse<DateTests> GetTestParamsWithHttpInfo(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;WeatherForecast&gt;</returns>
         List<WeatherForecast> GetWeatherForecast(int operationIndex = 0);
@@ -53,6 +77,35 @@ namespace OpenApiGeneratorTest.WebApi.Client.Api
     public interface IWebApiApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DateTests</returns>
+        System.Threading.Tasks.Task<DateTests> GetTestParamsAsync(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DateTests)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DateTests>> GetTestParamsWithHttpInfoAsync(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -194,6 +247,168 @@ namespace OpenApiGeneratorTest.WebApi.Client.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>DateTests</returns>
+        public DateTests GetTestParams(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0)
+        {
+            OpenApiGeneratorTest.WebApi.Client.Client.ApiResponse<DateTests> localVarResponse = GetTestParamsWithHttpInfo(dateTimeOffset, dateTime, dateOnly);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of DateTests</returns>
+        public OpenApiGeneratorTest.WebApi.Client.Client.ApiResponse<DateTests> GetTestParamsWithHttpInfo(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0)
+        {
+            OpenApiGeneratorTest.WebApi.Client.Client.RequestOptions localVarRequestOptions = new OpenApiGeneratorTest.WebApi.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (dateTimeOffset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.ParameterToMultiMap("", "dateTimeOffset", dateTimeOffset));
+            }
+            if (dateTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+            }
+            if (dateOnly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.ParameterToMultiMap("", "dateOnly", dateOnly));
+            }
+
+            localVarRequestOptions.Operation = "WebApiApi.GetTestParams";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<DateTests>("/testParams", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTestParams", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DateTests</returns>
+        public async System.Threading.Tasks.Task<DateTests> GetTestParamsAsync(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            OpenApiGeneratorTest.WebApi.Client.Client.ApiResponse<DateTests> localVarResponse = await GetTestParamsWithHttpInfoAsync(dateTimeOffset, dateTime, dateOnly, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="OpenApiGeneratorTest.WebApi.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="dateTimeOffset"> (optional)</param>
+        /// <param name="dateTime"> (optional)</param>
+        /// <param name="dateOnly"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DateTests)</returns>
+        public async System.Threading.Tasks.Task<OpenApiGeneratorTest.WebApi.Client.Client.ApiResponse<DateTests>> GetTestParamsWithHttpInfoAsync(DateTimeOffset? dateTimeOffset = default(DateTimeOffset?), DateTimeOffset? dateTime = default(DateTimeOffset?), DateOnly? dateOnly = default(DateOnly?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+
+            OpenApiGeneratorTest.WebApi.Client.Client.RequestOptions localVarRequestOptions = new OpenApiGeneratorTest.WebApi.Client.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            if (dateTimeOffset != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.ParameterToMultiMap("", "dateTimeOffset", dateTimeOffset));
+            }
+            if (dateTime != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.ParameterToMultiMap("", "dateTime", dateTime));
+            }
+            if (dateOnly != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(OpenApiGeneratorTest.WebApi.Client.Client.ClientUtils.ParameterToMultiMap("", "dateOnly", dateOnly));
+            }
+
+            localVarRequestOptions.Operation = "WebApiApi.GetTestParams";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DateTests>("/testParams", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTestParams", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
